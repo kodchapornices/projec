@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แผนที่พร้อมกล่องข้อความซ่อน-แสดง</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f9fc;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            background-color: #d8ecf8;
+            width: 220px;
+            padding: 20px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            padding: 15px 30px;
+            color: #000;
+            cursor: pointer;
+        }
+        .sidebar ul li:hover, .sidebar ul li.active {
+            background-color: #b3e0f5;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            padding: 10px;
+        }
+        .map-section {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .map-container {
+            width: 70%;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .map-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .info-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+        }
+        .map-box {
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        .map-box h4 {
+            margin: 0;
+            font-size: 16px;
+            color: #007bff;
+            padding: 10px;
+            background-color: #e9f3f9;
+            border-bottom: 1px solid #007bff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .map-box h4 span {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        .map-box h4 span.rotate {
+            transform: rotate(180deg);
+        }
+        .map-box p {
+            margin: 10px;
+            font-size: 12px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <ul>
+            <a href="profile" style="text-decoration: none;">
+                <li>ข้อมูลผู้ใช้</li>
+            </a>
+            <a href="location" style="text-decoration: none;">
+                <li>สถานที่</li>
+            </a>
+            <a href="map" style="text-decoration: none;">
+                <li class="active">แผนที่</li>
+            </a>
+            <a href="equipment" style="text-decoration: none;">
+                <li>อุปกรณ์</li>
+            </a>
+        </ul>
+    </div>
+        <div class="content">
+            <!-- ส่วนแผนที่ -->
+            <div class="map-section">
+                <div class="map-container">
+                    <img src="https://via.placeholder.com/600x400" alt="แผนที่"> <!-- ใส่ภาพแผนที่ที่นี่ -->
+                </div>
+            </div>
+            <!-- ส่วนข้อมูลด้านขวา -->
+            <div class="info-section">
+                <div class="map-box" onclick="toggleContent('box1', 'icon1')">
+                    <h4>อาคารวิทยวิภาส <span id="icon1">▼</span></h4>
+                    <p id="box1">คณะวิทยาศาสตร์ มหาวิทยาลัยขอนแก่น</p>
+                </div>
+                <div class="map-box" onclick="toggleContent('box2', 'icon2')">
+                    <h4>แท็กตัวที่ 5 <span id="icon2">▼</span></h4>
+                    <p id="box2">ชั้นที่ 4</p>
+                </div>
+                <div class="map-box" onclick="toggleContent('box3', 'icon3')">
+                    <h4>แท็กตัวที่ 6 <span id="icon3">▼</span></h4>
+                    <p id="box3">ชั้นที่ 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(contentId, iconId) {
+            const content = document.getElementById(contentId);
+            const icon = document.getElementById(iconId);
+
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate');
+        }
+    </script>
+</body>
+</html>

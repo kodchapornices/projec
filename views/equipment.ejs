@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อุปกรณ์</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f9fc;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #d8ecf8;
+            width: 220px;
+            padding: 20px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px 30px;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .sidebar ul li:hover,
+        .sidebar ul li.active {
+            background-color: #b3e0f5;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            /*หัวข้อ*/
+            background-color: #e9f3f9;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .table-container {
+            width: 164.5vh;
+            height: 90%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th,table td { 
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+        }
+
+        .status-icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .battery {
+            font-weight: bold;
+        }
+
+        .low {
+            color: red;
+        }
+
+        .medium {
+            color: orange;
+        }
+
+        .high {
+            color: green;
+        }
+
+        .edit-icon {
+            cursor: pointer;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .search-bar input {
+            width: 95%;
+            padding: 8px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <a href="profile" style="text-decoration: none;">
+                    <li>ข้อมูลผู้ใช้</li>
+                </a>
+                <a href="location" style="text-decoration: none;">
+                    <li>สถานที่</li>
+                </a>
+                <a href="map" style="text-decoration: none;">
+                    <li>แผนที่</li>
+                </a>
+                <a href="equipment" style="text-decoration: none;">
+                    <li class="active">อุปกรณ์</li>
+                </a>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">อุปกรณ์</div>
+            <div class="table-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="ค้นหา">
+                    <img src="signal-icon.png" alt="เพิ่ม" width="32">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>แท็ก</th>
+                            <th>รายละเอียด</th>
+                            <th>ชั้น</th>
+                            <th>อุปกรณ์ที่ติดตาม</th>
+                            <th>แบตเตอรี่</th>
+                            <th>จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>แท็กตัวที่ 1</td>
+                            <td>เครื่องเซิฟเวอร์ 1</td>
+                            <td>5</td>
+                            <td><span class="status-icon red"></span></td>
+                            <td class="battery low">20%</td>
+                            <td><img src="edit-icon.png" alt="แก้ไข" class="edit-icon" width="20"></td>
+                        </tr>
+                        <tr>
+                            <td>แท็กตัวที่ 2</td>
+                            <td>เครื่องเซิฟเวอร์ 2</td>
+                            <td>5</td>
+                            <td><span class="status-icon red"></span></td>
+                            <td class="battery medium">50%</td>
+                            <td><img src="edit-icon.png" alt="แก้ไข" class="edit-icon" width="20"></td>
+                        </tr>
+                        <tr>
+                            <td>แท็กตัวที่ 3</td>
+                            <td>เครื่องเซิฟเวอร์ 3</td>
+                            <td>5</td>
+                            <td><span class="status-icon green"></span></td>
+                            <td class="battery high">70%</td>
+                            <td><img src="edit-icon.png" alt="แก้ไข" class="edit-icon" width="20"></td>
+                        </tr>
+                        <tr>
+                            <td>แท็กตัวที่ 4</td>
+                            <td>เครื่องเซิฟเวอร์ 4</td>
+                            <td>5</td>
+                            <td><span class="status-icon green"></span></td>
+                            <td class="battery high">80%</td>
+                            <td><img src="edit-icon.png" alt="แก้ไข" class="edit-icon" width="20"></td>
+                        </tr>
+                        <tr>
+                            <td>แท็กตัวที่ 5</td>
+                            <td>โน้ตบุ๊ค1</td>
+                            <td>4</td>
+                            <td><span class="status-icon green"></span></td>
+                            <td class="battery high">97%</td>
+                            <td><img src="edit-icon.png" alt="แก้ไข" class="edit-icon" width="20"></td>
+                        </tr>
+                        <tr>
+                            <td>แท็กตัวที่ 6</td>
+                            <td>โน้ตบุ๊ค2</td>
+                            <td>4</td>
+                            <td><span class="status-icon green"></span></td>
+                            <td class="battery high">100%</td>
+                            <td><img src="edit-icon.png" alt="แก้ไข" class="edit-icon" width="20"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

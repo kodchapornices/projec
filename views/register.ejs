@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f4fb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .register {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .register h1 {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        label {
+            display: block; 
+            text-align: left;
+            font-weight: normal; 
+            font-size: 15px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px ;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        .button {
+            width: 50%;
+            padding: 10px;
+            background-color: #15addf9a;
+            color: black;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: 10px;
+        }
+        .button:hover {
+          background-color: #15addf9a;
+        }
+        .button:active {
+          background-color: #15addf9a;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="register">
+        <form action="/users/register" method="post">
+        <h1>ลงทะเบียน</h1>
+        <div>
+            <label for="username">ชื่อผู้ใช้</label>
+            <input type="text" id="username" placeholder="ชื่อผู้ใช้" name="username" required>
+        </div>
+        <div>
+            <label for="fname">ชื่อ</label>
+            <input type="text" id="fname" placeholder="ชื่อ" name="fname" required>  <!-- เปลี่ยนจาก firstName เป็น fname -->
+        </div>
+        <div>
+            <label for="lname">นามสกุล</label>
+            <input type="text" id="lname" placeholder="นามสกุล" name="lname" required>  <!-- เปลี่ยนจาก lastName เป็น lname -->
+        </div>
+        <div>
+        <div>
+            <label for="password">รหัสผ่าน</label>
+            <input type="password" id="password" placeholder="รหัสผ่าน" required>
+        </div>
+        <div>
+            <label for="password">ยืนยันรหัสผ่าน</label>
+            <input type="password" id="confirmPassword" placeholder="ยืนยันรหัสผ่าน" name="password"required>
+        </div>
+        <div>
+            <label for="email">อีเมล</label>
+            <input type="email" id="email" placeholder="กรอกอีเมล" name="email" required>
+        </div>
+        <div>
+            <label for="tel">เบอร์โทรศัพท์</label>
+            <input type="text" id="phone" placeholder="กรอกเบอร์โทร" name="telnum"required>
+        </div>
+        <div>
+            <label for="date">วันเกิด</label>
+            <input type="date" id="birthdate" placeholder="วันเกิด" name="bday" required>
+        </div>
+        <button class="submit">ลงทะเบียน</button>
+    </form>
+    </div>
+</body>
+</html>

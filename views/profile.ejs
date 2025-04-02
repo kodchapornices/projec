@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลผู้ใช้</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f9fc;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #d8ecf8;
+            width: 220px;
+            padding: 20px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px 30px;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .sidebar ul li:hover,
+        .sidebar ul li.active {
+            background-color: #b3e0f5;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            /*หัวข้อ*/
+            background-color: #e9f3f9;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .form {
+            margin-top: 20px;
+        }
+
+        .form .row {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .form .row label {
+            flex: 0 0 100px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .form .row input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form .button-container {
+            text-align: right;
+        }
+
+        .form .button-container button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .form .button-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <a href="profile" style="text-decoration: none;">
+                    <li class="active">ข้อมูลผู้ใช้</li>
+                </a>
+                <a href="location" style="text-decoration: none;">
+                    <li>สถานที่</li>
+                </a>
+                <a href="map" style="text-decoration: none;">
+                    <li>แผนที่</li>
+                </a>
+                <a href="equipment" style="text-decoration: none;">
+                    <li>อุปกรณ์</li>
+                </a>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">ข้อมูลผู้ใช้</div>
+            <div class="form">
+                <div class="row">
+                    <label for="firstName">ชื่อ</label>
+                    <input type="text" id="firstName" placeholder="กรอกชื่อ">
+                </div>
+                <div class="row">
+                    <label for="lastName">นามสกุล</label>
+                    <input type="text" id="lastName" placeholder="กรอกนามสกุล">
+                </div>
+                <div class="row">
+                    <label for="email">อีเมล</label>
+                    <input type="email" id="email" placeholder="กรอกอีเมล">
+                </div>
+                <div class="row">
+                    <label for="phone">โทรศัพท์</label>
+                    <input type="tel" id="phone" placeholder="กรอกเบอร์โทร">
+                </div>
+                <div class="row">
+                    <label for="birthDate">วันเกิด</label>
+                    <input type="date" id="birthDate">
+                </div>
+                <div class="button-container">
+                    <button>ออกจากระบบ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

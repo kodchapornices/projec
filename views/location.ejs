@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f9fc;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar { 
+            background-color: #d8ecf8;
+            width: 220px;
+            padding: 20px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            padding: 15px 30px;
+            color: #000;
+            cursor: pointer;
+        }
+        .sidebar ul li:hover, .sidebar ul li.active {
+            background-color: #b3e0f5;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .header {
+            background-color: #e9f3f9;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        .upload-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .upload-container button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #e2e6ea;
+            cursor: pointer;
+            color: #333;
+        }
+        .upload-container button:hover {
+            background-color: #d6d8db;
+        }
+        .form .row {
+            display: flex;
+            margin-bottom: 15px;
+            justify-content: space-between;
+        }
+        .form .row input {
+            flex: 0 0 45%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form .button-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .form .button-container button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .form .button-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <a href="profile" style="text-decoration: none;">
+                    <li>ข้อมูลผู้ใช้</li>
+                </a>
+                <a href="location" style="text-decoration: none;">
+                    <li class="active">สถานที่</li>
+                </a>
+                <a href="map" style="text-decoration: none;">
+                    <li>แผนที่</li>
+                </a>
+                <a href="equipment" style="text-decoration: none;">
+                    <li>อุปกรณ์</li>
+                </a>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">สถานที่</div>
+            <div class="form-container">
+                <div class="upload-container">
+                    <button>📎 เพิ่มรูปสถานที่</button>
+                </div>
+                <div class="form">
+                    <div class="row">
+                        <input type="text" placeholder="ชื่อสถานที่">
+                        <input type="text" placeholder="ที่อยู่">
+                    </div>
+                    <div class="row">
+                        <input type="text" placeholder="ตำบล">
+                        <input type="text" placeholder="อำเภอ">
+                    </div>
+                    <div class="row">
+                        <input type="text" placeholder="จังหวัด">
+                    </div>
+                    <div class="button-container">
+                        <button>อัปเดต</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
